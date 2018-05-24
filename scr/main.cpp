@@ -1,4 +1,9 @@
+#include<LaborkaConfig.h>
+#ifdef USE_TRIGONOMETRY_DEGREE
 #include <trygonometria.h>
+#else
+#include <cmath>
+#endif
 
 int main()
 {
@@ -29,5 +34,9 @@ int main()
 	#ifdef USE_TRIGONOMETRY_DEGREE
 	result=degreemath::cos(45.0);
 	std::cout<<result<<result<<std::endl;
+#else
+	result=std::cos(45.0);
+	std::cout<<result<<std::endl;
+#endif
 
 }
